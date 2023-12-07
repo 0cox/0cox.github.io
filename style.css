@@ -22,11 +22,9 @@ body, html {
     font-weight: bold;
 }
 
-/* #logo {
-    font-size: 160px;
-    font-weight: bold;
-    margin-right: 20px;
-} */
+#logo {
+   height: 100px;
+}
 
 .video-container {
     position: absolute;
