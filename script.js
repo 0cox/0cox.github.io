@@ -13,3 +13,23 @@ function animateLogoAndShowVideo() {
         videoContainer.style.opacity = "1";
     }, 500); // 500ms for logo animation to complete
 }
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Create worm element
+    const worm = document.createElement('div');
+    worm.id = 'worm';
+    document.body.appendChild(worm);
+
+    // Mouse move event
+    document.addEventListener('mousemove', (e) => {
+        // Update worm position
+        worm.style.left = e.pageX + 'px';
+        worm.style.top = e.pageY + 'px';
+    });
+
+    // Click event on image
+    document.getElementById('logo-holder').addEventListener('click', () => {
+        worm.style.opacity = '0';
+    });
+});

@@ -62,3 +62,17 @@ body, html {
     border-right: 5px solid white;
     height: 100%;
 }
+
+
+#worm {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    opacity: 1;
+    z-index: 10;
+}
+
+/* Add keyframes for wiggly movement if needed */
