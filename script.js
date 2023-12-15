@@ -15,21 +15,44 @@ function animateLogoAndShowVideo() {
 }
 
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Create worm element
+document.addEventListener('DOMContentLoaded', () => {
     const worm = document.createElement('div');
     worm.id = 'worm';
     document.body.appendChild(worm);
 
-    // Mouse move event
+    let positions = []; // Store cursor positions
+    const maxPositions = 10; // Max number of positions to store
+
+    let idleTimer;
+    const idleTime = 3000; // Time in ms to consider cursor idle
+
     document.addEventListener('mousemove', (e) => {
+        // Reset idle timer on mouse move
+        clearTimeout(idleTimer);
+        worm.style.opacity = '1';
+
+        // Update positions
+        positions.push({x: e.pageX, y: e.pageY});
+        if (positions.length > maxPositions) {
+            positions.shift();
+        }
+
         // Update worm position
-        worm.style.left = e.pageX + 'px';
-        worm.style.top = e.pageY + 'px';
+        worm.style.left = positions[0].x + 'px';
+        worm.style.top = positions[0].y + 'px';
+
+        idleTimer = setTimeout(moveWormRandomly, idleTime);
     });
 
-    // Click event on image
     document.getElementById('logo-holder').addEventListener('click', () => {
         worm.style.opacity = '0';
     });
+
+    function moveWormRandomly() {
+        // Random movement logic
+        const randomX = Math.random() * window.innerWidth;
+        const randomY = Math.random() * window.innerHeight;
+        worm.style.left = randomX + 'px';
+        worm.style.top = randomY + 'px';
+    }
 });
