@@ -1,3 +1,9 @@
+
+function onLogoClick() {
+    window.location.href = "https://www.mixcloud.com/live/workshop_/";
+    // animateLogoAndShowVideo();
+}
+
 function animateLogoAndShowVideo() {
     var logoHolder = document.getElementById("logo-holder");
     var videoContainer = document.getElementById("videoContainer");
