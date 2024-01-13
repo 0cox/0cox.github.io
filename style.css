@@ -63,15 +63,11 @@ body, html {
     height: 100%;
 }
 
-#worm {
-    position: absolute;
-    width: 100px; /* Adjust size as needed */
-    height: 20px;
-    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-    border-radius: 10px;
-    transition: all 0.5s ease; /* Adjust for smoother or faster transitions */
-    opacity: 1;
-    z-index: 10;
+#cvs {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* z-index: 100000; */
 }
-
-/* Add keyframes for wiggly movement if needed */
