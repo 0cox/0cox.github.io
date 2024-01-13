@@ -35,6 +35,20 @@ cvs.height = cvs.offsetHeight;
 document.addEventListener('mousemove', (e) => {
     mousePos.x = e.pageX;
     mousePos.y = e.pageY;
+    // if(e.pageX < cvs.offsetWidth / 2) {
+    //     if(e.pageY < cvs.offsetHeight / 2) {
+    //         document.body.style.cursor = "se-resize";
+    //     } else {
+    //         document.body.style.cursor = "ne-resize";
+    //     }
+    // }
+    // else {
+    //     if(e.pageY < cvs.offsetHeight / 2) {
+    //         document.body.style.cursor = "sw-resize";
+    //     } else {
+    //         document.body.style.cursor = "nw-resize";
+    //     }
+    // }
     wormPoints.push({ x: mousePos.x, y: mousePos.y, t: 0 });
     if (wormPoints.length > MAX_POINTS) {
         wormPoints.shift();

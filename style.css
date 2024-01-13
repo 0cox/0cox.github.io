@@ -24,6 +24,7 @@ body, html {
 
 #logo {
    height: 100px;
+   cursor: crosshair;
 }
 
 .video-container {
@@ -70,4 +71,5 @@ body, html {
     top: 0;
     left: 0;
     /* z-index: 100000; */
+    cursor: wait;
 }
